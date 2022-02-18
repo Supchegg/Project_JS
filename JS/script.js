@@ -364,13 +364,6 @@ john.sayHello();
 
 // Practise 
 
-Object.setPrototypeOf(log(),personalMovieDB);
-Object.setPrototypeOf(copy(),personalMovieDB);
-Object.setPrototypeOf(compareNum(),personalMovieDB);
-Object.setPrototypeOf(showMyDb(),personalMovieDB);
-Object.setPrototypeOf(writeYourGenres(),personalMovieDB);
-Object.setPrototypeOf(detectPersonalLvl(),personalMovieDB);
-Object.setPrototypeOf(rememberMyFilms(),personalMovieDB);
 
 function toggleVisibleMyDB() {
     if (personalMovieDB.privat){
@@ -381,3 +374,90 @@ function toggleVisibleMyDB() {
 }
 
 
+// Dinamic tipisaition 
+//1
+
+console.log(typeof(String(4)));
+
+//2 
+console.log(typeof(4 + "")); // При сложении всегда string
+console.log(typeof(null + "")); // При сложении всегда string
+
+// const num = 5;
+console.log("https://vk.com/catalog/" + num); 
+
+const fonrSize = 26 + "px";
+
+// To number
+
+//1)
+console.log(typeof(Number("4")));
+
+//2)
+console.log(typeof(+"5"));
+
+// 3)
+console.log(typeof(parseInt("15 px", 10)));
+
+// To boolean
+
+// 0, '', null, underfined, NaN; - Значения которые всегда false
+
+// 1,
+let switcher = null;
+
+if(switcher) {
+    console.log('Working...')
+}
+
+switcher = 1;
+
+if(switcher) {
+    console.log('Working...')
+}
+
+// 2)
+console.log(typeof(Boolean("4")));
+
+// 3)
+// console.log(typeof(!!"4"))); // !! Превращает в значение булиновое
+
+console.log([1] + false);
+console.log(2 && 1 && null && 0 && undefined); 
+// И запинается на лжи
+// Или запинается на правде 
+console.log(!!( 1 && 2 ) == (1 && 2)); // !! Превращает значение в булиновое 
+
+alert ( null || 2 && 3 || 4); // 3
+
+// console.log ( 4 && 5);
+const a = [1, 2, 3];
+const b = [1, 2, 3]; // Они не равны, жви разные коробки.
+
+console.log(typeof(+"Infinity"));// number
+
+console.log("Ежик" > "яблоко");// Нужно открыть таблицу unicode, сравнивается по 1 букве слева на право
+console.log( 0 || "" || 2 || undefined || true || false); // Код идет слева напрво, и если запинается на правде выводит - 2 и дальше не идет
+
+const box = document.getElementById('box');
+
+console.log(box);
+
+const btns = document.getElementsByTagName('button');// На странице отображается как псевдомассив
+
+console.log(btns[0]);
+
+const circles = document.getElementsByClassName('circle'); // Обращаемся к документу HTML и пытаемся получить все значения класса circle
+console.log (circles);
+
+// Более современные методы
+
+const hearts = document.querySelectorAll(".heart");
+
+console.log(hearts);
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneHeart = document.querySelector(".heart"); //Первый документ берет
+console.log(oneHeart);
